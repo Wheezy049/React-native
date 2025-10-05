@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, useColorScheme } from 'react-native'
 import { Link } from 'expo-router'
 import { Colors } from '../constants/Colors'
+import ThemedText from '../components/ThemedText'
 
 const About = () => {
 
@@ -9,8 +10,8 @@ const About = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background}]}>
-      <Text style={[styles.title, { color: theme.title}]}>About Page</Text>
-      <Link style={[styles.Link, { color: theme.primary}]} href='/'>Back Home</Link>
+      <ThemedText style={[styles.title, { color: theme.title}]}>About Page</ThemedText>
+      <Link style={[styles.Link, { color: theme.primary}]} href='/'><ThemedText>Back Home</ThemedText></Link>
     </View>
   )
 }
