@@ -18,9 +18,14 @@ const RootLayout = () => {
         headerStyle: { backgroundColor: theme.navBackground },
         headerTintColor: theme.text
       }}>
+
+        <Stack.Screen name='(auth)' options={{ headerShown: false }} />
+
         <Stack.Screen name="index" options={{ title: 'Home' }} />
         <Stack.Screen name="about" options={{ title: 'About' }} />
         <Stack.Screen name="contact" options={{ title: 'Contact', headerShown: false }} />
+        {/* <Stack.Screen name="login" options={{ title: 'Login' }} /> */}
+        {/* <Stack.Screen name="register" options={{ title: 'Register' }} /> */}
       </Stack>
       </View>
       <Text style={{ textAlign: 'center', marginBottom: 20, color: '#000', backgroundColor: 'yellow' }}>Footer</Text>

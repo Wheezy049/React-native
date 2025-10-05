@@ -22,12 +22,12 @@ const index = () => {
         <ThemedText>This is a CARD</ThemedText>
       </View>
 
-      <Link style={styles.Link} href="/about">
-        <ThemedText>About Page </ThemedText>
+      <Link style={styles.Link} href="/login">
+        <ThemedText>Login Page </ThemedText>
       </Link>
 
-      <Link style={styles.Link} href="/contact">
-        <ThemedText>Contact Page</ThemedText>
+      <Link style={styles.Link} href="/register">
+        <ThemedText>Register Page</ThemedText>
       </Link>
     </ThemedView>
   );
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
   },
   title: {
     fontWeight: "bold",
