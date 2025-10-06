@@ -29,6 +29,10 @@ const index = () => {
       <Link style={styles.Link} href="/register">
         <ThemedText>Register Page</ThemedText>
       </Link>
+
+      <Link style={styles.Link} href="/profile">
+        <ThemedText>Profile Page</ThemedText>
+      </Link>
     </ThemedView>
   );
 };
