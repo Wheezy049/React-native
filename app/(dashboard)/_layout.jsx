@@ -32,7 +32,7 @@ export default function DashboardLayout() {
         name="create"
         options={{ title: "Create", tabBarIcon: ({ focused}) => (
             <Ionicons name={focused ? "add" : "add-outline"} size={24} color={focused ? theme.iconColorFocused : theme.iconColor} />
-        ) }} 
+        ) }}
       />
     </Tabs>
   )
