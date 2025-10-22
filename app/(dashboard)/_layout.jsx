@@ -36,6 +36,10 @@ export default function DashboardLayout() {
             <Ionicons name={focused ? "add" : "add-outline"} size={24} color={focused ? theme.iconColorFocused : theme.iconColor} />
         ) }}
       />
+      <Tabs.Screen 
+        name="books/[id]"
+        options={{ href: null}}
+      />
     </Tabs>
     </UserOnly>
   )

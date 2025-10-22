@@ -3,6 +3,7 @@ import { Slot, Stack } from "expo-router";
 import { Colors } from "../constants/Colors";
 import { StatusBar } from "expo-status-bar";
 import { UserProvider } from "../contexts/UserContext";
+import { BooksProvider } from "../contexts/BookContexts";
 
 const RootLayout = () => {
   const colorScheme = useColorScheme();
@@ -10,6 +11,7 @@ const RootLayout = () => {
 
   return (
     <UserProvider>
+      <BooksProvider>
       <StatusBar value="auto" />
       <View style={{ flex: 1 }}>
         <View style={{ flex: 1 }}>
@@ -33,7 +35,7 @@ const RootLayout = () => {
             {/* <Stack.Screen name="register" options={{ title: 'Register' }} /> */}
           </Stack>
         </View>
-        <Text
+        {/* <Text
           style={{
             textAlign: "center",
             marginBottom: 20,
@@ -42,8 +44,9 @@ const RootLayout = () => {
           }}
         >
           Footer
-        </Text>
+        </Text> */}
       </View>
+      </BooksProvider>
     </UserProvider>
   );
 };
