@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-import Logo from "../assets/img/vobb-dark.png";
 import { Link } from "expo-router";
 import ThemedView from "../components/ThemedView";
 import ThemeLogo from "../components/ThemeLogo";

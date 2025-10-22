@@ -1,40 +1,53 @@
-import { StyleSheet, Text, useColorScheme, View } from 'react-native'
-import { Slot, Stack } from 'expo-router'
-import { Colors } from '../constants/Colors'
-import { StatusBar } from 'expo-status-bar'
+import { StyleSheet, Text, useColorScheme, View } from "react-native";
+import { Slot, Stack } from "expo-router";
+import { Colors } from "../constants/Colors";
+import { StatusBar } from "expo-status-bar";
+import { UserProvider } from "../contexts/UserContext";
 
 const RootLayout = () => {
-
-  const colorScheme = useColorScheme()
-  const theme = Colors[colorScheme] ?? Colors.light
+  const colorScheme = useColorScheme();
+  const theme = Colors[colorScheme] ?? Colors.light;
 
   return (
-    <>
-    <StatusBar value='auto' />
-    <View style={{ flex: 1 }}>
-     <View style={{ flex: 1 }}> 
-      {/* <Stack /> */}
-      <Stack screenOptions={{
-        headerStyle: { backgroundColor: theme.navBackground },
-        headerTintColor: theme.text
-      }}>
+    <UserProvider>
+      <StatusBar value="auto" />
+      <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 }}>
+          {/* <Stack /> */}
+          <Stack
+            screenOptions={{
+              headerStyle: { backgroundColor: theme.navBackground },
+              headerTintColor: theme.text,
+            }}
+          >
+            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+            <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
 
-        <Stack.Screen name='(auth)' options={{ headerShown: false }} />
-        <Stack.Screen name='(dashboard)' options={{ headerShown: false }} />
-
-        <Stack.Screen name="index" options={{ title: 'Home' }} />
-        <Stack.Screen name="about" options={{ title: 'About' }} />
-        <Stack.Screen name="contact" options={{ title: 'Contact', headerShown: false }} />
-        {/* <Stack.Screen name="login" options={{ title: 'Login' }} /> */}
-        {/* <Stack.Screen name="register" options={{ title: 'Register' }} /> */}
-      </Stack>
+            <Stack.Screen name="index" options={{ title: "Home" }} />
+            <Stack.Screen name="about" options={{ title: "About" }} />
+            <Stack.Screen
+              name="contact"
+              options={{ title: "Contact", headerShown: false }}
+            />
+            {/* <Stack.Screen name="login" options={{ title: 'Login' }} /> */}
+            {/* <Stack.Screen name="register" options={{ title: 'Register' }} /> */}
+          </Stack>
+        </View>
+        <Text
+          style={{
+            textAlign: "center",
+            marginBottom: 20,
+            color: "#000",
+            backgroundColor: "yellow",
+          }}
+        >
+          Footer
+        </Text>
       </View>
-      <Text style={{ textAlign: 'center', marginBottom: 20, color: '#000', backgroundColor: 'yellow' }}>Footer</Text>
-    </View>
-    </>
-  )
-}
+    </UserProvider>
+  );
+};
 
-export default RootLayout
+export default RootLayout;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
